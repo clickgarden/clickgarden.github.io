@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Click Garden | Switch</title>
   <link rel="stylesheet" href="switch.css" />
 </head>
-
 <body class="quiet">
   <section class="quiet">
     <header class="head">
@@ -19,22 +17,11 @@
       </ul>
     </header>
   </section>
-
   <audio id="audio" src="../audio/switch.wav"></audio>
-
-  <label class="switch" >
-    <input type="checkbox">
-    <span class="slider round" ></span>
+  <label class="switch">
+    <input checked type="checkbox" />
+    <span class="slider round"></span>
   </label>
-
-  <script>
-    document.querySelector('.switch').addEventListener('click', () => {
-      const audio = document.getElementById('audio');
-      audio.play();
-    });
-
-    
-  </script>
+  <script src="switch.js"></script>
 </body>
-
 </html>

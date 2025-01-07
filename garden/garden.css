@@ -32,6 +32,8 @@ header ul {
   position: relative;
   display: flex;
   list-style: none;
+  opacity: 0; 
+  animation: fadeInMenu 1s 1s forwards; 
 }
 
 header ul li a {
@@ -48,15 +50,16 @@ section {
 
 .homepage {
   display: flex;
+  height: 100vh;
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  height: 100vh;
   background: linear-gradient(190deg, #f5fbf4, #d1edcc, #75bc77, #28764f);
   background-size: cover;
   background-position: right;
   background-attachment: fixed;
   color: #ffffff;
+  animation: slideDown 1s ease-out forwards;
 }
 
 .homepage h1 {
@@ -78,7 +81,188 @@ header .logo {
   text-decoration: none;
   letter-spacing: 2px;
   color: #75bc77;
+  position: sticky;
+  z-index: 1000;
 }
+
+::selection {
+  background: #75bc77;
+  color: #ffffff;
+}
+
+header.menu-active {
+  background: #ffffff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+header.menu-active .logo {
+  color: #75bc77;
+}
+
+header.menu-active ul li a {
+  color: #75bc77;
+}
+
+header:hover,
+header ul li a:hover,
+.logo:hover,
+.toggle:hover {
+  color: #6ead70;
+}
+
+@media (max-width: 991px) {
+  header,
+  header.sticky {
+    padding: 20px 50px;
+    z-index: 1000;
+  }
+
+  header img {
+    display: none;
+  }
+
+  header .logo {
+    margin-left: 20px;
+  }
+
+  .menu {
+    display: block;
+    position: fixed;
+    top: -100%; 
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 50px 50px;
+    text-align: center;
+    background: #fff;
+    transition: top 0.5s ease-in-out;
+    z-index: 999;
+  }
+
+  .menu.active {
+    top: 75px; 
+  }
+
+  header ul li a {
+    margin: 10px;
+    font-size: 20px;
+    color: #75bc77;
+  }
+
+  .toggle {
+    width: 40px;
+    height: 40px;
+    background: url("../img/menu.png");
+    filter: invert(36%) sepia(80%) saturate(100%) hue-rotate(80deg) brightness(100%) contrast(96%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    cursor: pointer;
+    position: sticky;
+    z-index: 1000;
+  }
+
+  .toggle.active {
+    width: 40px;
+    height: 40px;
+    background: url("../img/close.png");
+    filter: invert(36%) sepia(80%) saturate(100%) hue-rotate(80deg) brightness(100%) contrast(96%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 25px;
+    cursor: pointer;
+    position: sticky;
+    z-index: 1000;
+  }
+
+  header.sticky .toggle {
+    filter: invert(1);
+  }
+
+  section {
+    padding: 100px 50px;
+  }
+
+  .homepage {
+    padding: 150px 50px 100px;
+  }
+
+  .homepage h1 {
+    font-size: 2em;
+  }
+
+  .homepage h3 {
+    font-size: 1em;
+  }
+
+  .homepage p {
+    font-size: 0.8em;
+  }
+
+  .homepage a:hover::after {
+    z-index: 1;
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 600px) {
+  header,
+  header.sticky {
+    padding: 20px 20px;
+    z-index: 1000;
+  }
+
+  .homepage {
+    padding: 150px 20px 100px;
+  }
+
+  section {
+    padding: 100px 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .homepage {
+    height: 100vh;
+    padding: 150px 20px 100px;
+  }
+}
+
+@media (max-width: 300px) {
+  header,
+  header.sticky {
+    padding: 20px 20px;
+    z-index: 1000;
+  }
+
+  .homepage {
+    height: 105vh;
+    padding: 150px 20px 100px;
+  }
+
+  section {
+    padding: 100px 20px;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes fadeInMenu {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 
 .button-container {
   display: flex;

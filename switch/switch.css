@@ -1,76 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  font-family: 'Poppins';
+  font-family: "DM Sans", serif;
 }
 
 .quiet {
   background-color: black;
 }
 
-.switch {
-  position: relative;
-  width: 500px;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+    outline: none;
+    height: 28em;
+    width: 62.5em;
+    background-color: #242424;
+    -webkit-transform: skewX(-7deg);
+    -ms-transform: skewX(-7deg);
+    transform: skewX(-7deg);
+    -webkit-transition: transform 0.4s ease;
+    -o-transition: transform 0.4s ease;
+    transition: transform 0.4s ease;
+    border-radius: 1em; 
 }
 
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+input[type="checkbox"]:before {
+    content: "";
+    position: absolute;
+    width: 24em;
+    height: 24em;
+    background-color: #2d2936;
+    color: #a0a0a0;
+    top: 2.1em;
+    left: 2.1em;
+    -webkit-transition: transform 0.4s ease;
+    -o-transition: transform 0.4s ease;
+    transition: transform 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1px;
+    border-radius: 0.5em; 
 }
 
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+input[type="checkbox"]:checked {
+    background: linear-gradient(135deg, #75bc77, #28764f);
+    border-radius: 1em; 
 }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 280px;
-  width: 280px;
-  margin-top: 9px;
-  margin-left: 12px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked+.slider {
-  background-color: #b7eab7;
-}
-
-input:focus+.slider {
-  box-shadow: 0 0 1px #b7eab7;
-}
-
-input:checked+.slider:before {
-  -webkit-transform: translateX(195px);
-  -ms-transform: translateX(195px);
-  transform: translateX(195px);
-}
-
-.slider.round {
-  border-radius: 150px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
+input[type="checkbox"]:checked:before {
+    left: 4.1em;
+    color: #89befe;
+    -webkit-transform: translateX(32em);
+    -ms-transform: translateX(32em);
+    transform: translateX(32em);
+    border-radius: 0.5em; 
 }
 
 .head {
@@ -84,7 +80,6 @@ input:checked+.slider:before {
   z-index: 1001;
   justify-content: space-between;
   align-items: center;
-  
 }
 
 header ul {
