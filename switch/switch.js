@@ -1,4 +1,10 @@
-document.querySelector('.switch').addEventListener('click', () => {
-    const audio = document.getElementById('audio');
-    audio.play();
-});
+document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("audio");
+    const toggle = document.querySelector(".toggle-checkbox");
+  
+    toggle.addEventListener("change", () => {
+      audio.currentTime = 0;
+      audio.play();
+    });
+  });
+  

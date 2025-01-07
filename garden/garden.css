@@ -32,8 +32,6 @@ header ul {
   position: relative;
   display: flex;
   list-style: none;
-  opacity: 0; 
-  animation: fadeInMenu 1s 1s forwards; 
 }
 
 header ul li a {
@@ -253,16 +251,6 @@ header ul li a:hover,
     top: 0;
   }
 }
-
-@keyframes fadeInMenu {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 
 .button-container {
   display: flex;
